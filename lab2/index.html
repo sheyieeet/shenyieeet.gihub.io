@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		label {
+			font-size: 18pt; color: olive;font-weight: 700
+		}
+		form { 
+			background: ivory; 
+		}
+		input { 
+			background-color: white;
+		}
+		#title{ 
+			font-size: 25pt ; background:#0B614B;
+		}
+		span{
+		 font-weight:800; 
+		 color:darkred; 
+		 text-decoration:underline;
+		}
+		.info span{
+			color: inherit;
+		}
+		rs{
+			color:darkgreen;
+		}
+		p rs{
+			color:darkorange;
+		}
+	</style>
+</head>
+<body>
+<div id="title">
+	New HTML5 Input Types Demo
+</div>
+<br>
+<h2 class="info">
+	This form demonstrates the new <span>HTML5</span> input types and the placeholder,repuired and autofocus attributes
+</h2>
+
+<form>
+	<p>
+		<label>
+			<span>Color:</span>
+			<input type="color">
+		</label>
+	</p>
+	<p>
+		<label>
+			<span>Date:</span>
+			<input type="date" name="date"/>
+		</label>
+	</p>
+	
+	<p class="info" style="color:blue; font-size:18;" >
+		<br>
+			<span>Email:</span>
+			<input type="email" name="email" autofocus/>
+		
+	</p>
+	<p class="info" style="color: blue;font-size: 18;">
+		<br>
+			<span>Name:</span>
+			<input type="text" name="name"/>
+		
+	</p>
+	<p>
+		<label>
+			<rs>Range: </rs>
+			0
+			<input type="range" name="vol" min="0" max="20"/>
+			20
+		</label>
+	</p>
+	<p>
+		<label><rs>Search:</rs>
+			<input type="search" name="search" placeholder="search query"/>
+		</label>
+	</p>
+	<p>
+		<label>
+			<input type="time" id="appt" name="appt"/>
+		</label>
+
+	</p>
+	<p>
+		<input type="submit" name="submit"/>
+	</p>
+	</form>
+	<br>
+	<a href="html2.html">LINK</a>
+</body>
+</html>
