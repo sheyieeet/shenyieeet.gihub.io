@@ -14,24 +14,27 @@ nav{
 }
 
 nav a{
-	color:inherit;
+
 	text-decoration: none;
 	display: block;
 }
 
 nav ul{
-
 	
 	position:absolute;
 	list-style: none;
 	left:30px;
 	top: 30px;
 } 
+.navbar li{
 
+	color:inherit;
+}
 nav:hover ul{
 
 	display:block;
 }
+
 nav ul:hover{
 
 	display: block;
@@ -62,6 +65,4 @@ nav ul li:hover{
 
 		width :10em
 	}
-	.naxbar
-
 }
