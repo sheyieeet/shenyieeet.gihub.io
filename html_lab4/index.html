@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var firstInput = window.prompt("first input");
+		var secondInput = window.prompt("second input");
+
+		if(firstInput > secondInput){
+			document.body.style.backgroundColor = "lightblue";
+			document.write("firstinput>secondinput");
+		}else{
+			if(firstInput == secondInput){
+				document.body.style.backgroundColor = "lightyellow";
+				document.write("secondinput == firstinput");
+			}
+			else{
+				document.body.style.backgroundColor = "lightgreen";
+				document.write("secondinput > firstinput")
+			}
+		}
+	</script>
+	<input type="button" value="firstinput" onclick="document.write(firstInput)"/>
+	<input type="button" value="secondinput" onclick="document.write(secondInput)"/>
+</body>
+</html>
