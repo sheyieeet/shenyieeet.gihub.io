@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form>
+		<input id="button" type="button" value="Roll Dice">
+	</form>
+	<p>
+		<img id="die1" src="die1.png">
+		<img id="die2" src="die1.png">
+		<img id="die3" src="die1.png">
+		<img id="die4" src="die1.png">
+		<img id="die5" src="die1.png">
+		<img id="die6" src="die1.png">
+	</p>
+	<p>
+		<img id="die7" src="die1.png">
+		<img id="die8" src="die1.png">
+		<img id="die9" src="die1.png">
+		<img id="die10" src="die1.png">
+		<img id="die11" src="die1.png">
+		<img id="die12" src="die1.png">
+	</p>
+	<br>
+	<div id="tableDiv"></div>
+
+	<script type="text/javascript">
+		
+		var oneCount = 0;
+		var twoCount = 0;
+		var threeCount = 0;
+		var fourCount = 0;
+		var fiveCount = 0;
+		var sixCount = 0;
+
+		var totalCount = 0;
+		window.addEventListener("load", start, false);
+		function start(){
+
+			var button = document.getElementById("button");
+			button.addEventListener("click", rollDice);
+		}
+
+		function rollDice(){
+
+			for(var i = 1; i <= 12; ++i){
+
+				var face = Math.floor(1 + Math.random()*6);
+				var dieNumber = document.getElementById("die" + i);
+				setImage(dieNumber, face);
+			}
+		}
+
+		function setImage(dieNumber, face){
+
+			dieNumber.setAttribute("src", "die" + face + ".png");
+			tallyRolls(face);
+		}
+
+		function tallyRolls(face){
+
+			if(face == 1){
+
+				++oneCount;
+			}
+			if(face == 2){
+
+				++twoCount;
+			}
+			if(face == 3){
+
+				++threeCount;
+			}
+			if(face == 4){
+
+				++fourCount;
+			}
+			if(face == 5){
+
+				++fiveCount;
+			}
+			if(face == 6){
+
+				++sixCount;
+			}
+			++totalCount;
+			updateFrequencyTable();
+			
+		}
+		function updateFrequencyTable(){
+
+			document.getElementById("tableDiv").innerHTML = '<table border="1" style="width:20%; text-align : center;">' + '<thead style>' + '<tr><td>Face</td><td>Frequence</td><td>Percent</td></tr>' +'</thead>' + '<tbody>'+ 
+		'<tr><td>1</td><td>' + oneCount + '</td><td>'+ Math.floor(oneCount/totalCount*100) +'%'+'</td></tr>' +
+		'<tr><td>2</td><td>' + twoCount + '</td><td>'+ Math.floor(twoCount/totalCount*100) +'%'+'</td></tr>' +
+		'<tr><td>3</td><td>' + threeCount + '</td><td>'+ Math.floor(threeCount/totalCount*100)+'%'+'</td></tr>' + 
+		'<tr><td>4</td><td>' + fourCount + '</td><td>'+ Math.floor(fourCount/totalCount*100)+'%' +'</td></tr>' +
+		'<tr><td>5</td><td>' + fiveCount + '</td><td>'+ Math.floor(fiveCount/totalCount*100)+'%' +'</td></tr>' +
+		'<tr><td>6</td><td>' + sixCount + '</td><td>'+ Math.floor(sixCount/totalCount*100)+'%' +'</td></tr>' +
+		'</tbody>' + '</table>';
+		}
+		
+
+	</script>
+
+</body>
+</html>
