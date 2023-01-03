@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		var data = window.prompt("input data");
+		var search = window.prompt("input a char to search");
+		var lastFound = 0; // initialize the varible that marks the last index where the charactor searched is found 0.
+		var indexes = "";
+		while(true){// the loop is to search the specified char.
+			
+			lastFound = data.indexOf(search, lastFound);
+			
+			// assign the value of index at which the char is found to lastFound
+			if(lastFound != -1){
+
+				indexes = indexes.concat(lastFound);
+				indexes = indexes.concat("\n");
+				++lastFound;
+			}
+			else{// if return value == -1, there's no other char left to be searched, break out the while loop
+
+				break;
+			}
+			;
+		}
+		document.write(indexes);
+	
+
+	</script>
+
+</body>
+</html>
